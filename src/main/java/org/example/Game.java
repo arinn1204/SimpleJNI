@@ -8,7 +8,7 @@ public class Game implements GameMBean {
 
     private String stringAttribute;
 
-    private final Map<String, String> stringMap = Map.of("messi", "fast");
+    private final Map<String, String> stringMap = new HashMap<>();
     private final Map<String, Double> doubleMap = new HashMap<>();
     private final Map<String, Long> longMap = new HashMap<>();
     private final Map<String, Integer> intMap = new HashMap<>();
