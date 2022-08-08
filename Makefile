@@ -12,3 +12,6 @@ run:
 
 destroy:
 	docker rm --force jniexample
+
+stop:
+	docker stop jniexample
