@@ -6,3 +6,9 @@ package: build
 
 release: package
 	docker push trixter1394/jniexample-snapshot
+
+run:
+	docker run -d -p 9001:9001 --name jniexample trixter1394/jniexample-snapshot
+
+destroy:
+	docker rm --force jniexample
