@@ -28,6 +28,10 @@ public interface GameMBean {
 
     void putBoolean(String name, Boolean value);
 
+    Float getFloat(String name);
+
+    void putFloat(String name, Float value);
+
     List<Object> getList(String name);
 
     void putList(String name, List<Object> value);

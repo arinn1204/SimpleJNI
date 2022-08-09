@@ -1,5 +1,6 @@
 package org.example;
 
+import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ public class Game implements GameMBean {
     private final Map<String, Long> longMap = new HashMap<>();
     private final Map<String, Integer> intMap = new HashMap<>();
     private final Map<String, Boolean> booleanMap = new HashMap<>();
+    private final Map<String, Float> floatMap = new HashMap<>();
     private final Map<String, List<Object>> listMap = new HashMap<>();
 
     @Override
@@ -39,16 +41,20 @@ public class Game implements GameMBean {
 
     @Override
     public Double getDouble(String name) {
-        return doubleMap.computeIfAbsent(name, ignored -> 0.0);
+        Double aDouble = doubleMap.computeIfAbsent(name, ignored -> 0.0);
+        System.out.println("executing getValue for " + name + " and was " + aDouble);
+        return aDouble;
     }
 
     @Override
     public void putDouble(String name, Double value) {
+        System.out.println("executing putValue for " + name + " with a value of " + value);
         doubleMap.put(name, value);
     }
 
     @Override
     public Long getLong(String name) {
+        System.out.println("executing getValue for " + name);
         return longMap.get(name);
     }
 
@@ -75,6 +81,19 @@ public class Game implements GameMBean {
     @Override
     public void putBoolean(String name, Boolean value) {
         booleanMap.put(name, value);
+    }
+
+    @Override
+    public Float getFloat(String name) {
+        Float aFloat = floatMap.get(name);
+        System.out.println("executing getValue for " + name + " and was " + aFloat);
+        return aFloat;
+    }
+
+    @Override
+    public void putFloat(String name, Float value) {
+        System.out.println("executing putValue for " + name + " with a value of " + value);
+        floatMap.put(name, value);
     }
 
     @Override
