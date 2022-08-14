@@ -1,12 +1,14 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Game implements GameMBean {
-
     private String stringAttribute;
+    private Long longAttribute;
+    private Double doubleAttribute;
+    private Float floatAttribute;
+    private Boolean boolAttribute;
+    private Integer intAttribute;
 
     private final Map<String, String> stringMap = new HashMap<>();
     private final Map<String, Double> doubleMap = new HashMap<>();
@@ -15,6 +17,8 @@ public class Game implements GameMBean {
     private final Map<String, Boolean> booleanMap = new HashMap<>();
     private final Map<String, Float> floatMap = new HashMap<>();
     private final Map<String, List<Object>> listMap = new HashMap<>();
+    private final Map<String, Set<Object>> setMap = new HashMap<>();
+    private final Map<String, Map<Object, Object>> mapMap = new HashMap<>();
 
     @Override
     public String getStringAttribute() {
@@ -103,5 +107,69 @@ public class Game implements GameMBean {
     @Override
     public void putList(String name, List<Object> value) {
         listMap.put(name, value);
+    }
+
+    @Override
+    public Set<Object> getSet(String name) {
+        return setMap.get(name);
+    }
+
+    @Override
+    public void putSet(String name, Set<Object> value) {
+        setMap.put(name, value);
+    }
+
+    @Override
+    public Map<Object, Object> getMap(String name) {
+        return mapMap.get(name);
+    }
+
+    @Override
+    public void putMap(String name, Map<Object, Object> map) {
+        mapMap.put(name, map);
+    }
+
+    @Override
+    public Double getDoubleAttribute() {
+        return doubleAttribute;
+    }
+
+    public void setDoubleAttribute(Double doubleAttribute) {
+        this.doubleAttribute = doubleAttribute;
+    }
+
+    @Override
+    public Float getFloatAttribute() {
+        return floatAttribute;
+    }
+
+    public void setFloatAttribute(Float floatAttribute) {
+        this.floatAttribute = floatAttribute;
+    }
+
+    @Override
+    public Long getLongAttribute() {
+        return longAttribute;
+    }
+
+    public Boolean getBoolAttribute() {
+        return boolAttribute;
+    }
+
+    public void setLongAttribute(Long longAttribute) {
+        this.longAttribute = longAttribute;
+    }
+
+    public void setBoolAttribute(Boolean boolAttribute) {
+        this.boolAttribute = boolAttribute;
+    }
+
+    @Override
+    public Integer getIntAttribute() {
+        return intAttribute;
+    }
+
+    public void setIntAttribute(Integer intAttribute) {
+        this.intAttribute = intAttribute;
     }
 }

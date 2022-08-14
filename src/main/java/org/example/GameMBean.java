@@ -1,11 +1,23 @@
 package org.example;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public interface GameMBean {
 
     String getStringAttribute();
+    Integer getIntAttribute();
+    Long getLongAttribute();
+    Float getFloatAttribute();
+    Double getDoubleAttribute();
+    Boolean getBoolAttribute();
 
+    void setIntAttribute(Integer attribute);
+    void setLongAttribute(Long attribute);
+    void setFloatAttribute(Float attribute);
+    void setDoubleAttribute(Double attribute);
+    void setBoolAttribute(Boolean attribute);
     void setStringAttribute(String attribute);
 
     String getString(String name);
@@ -35,4 +47,11 @@ public interface GameMBean {
     List<Object> getList(String name);
 
     void putList(String name, List<Object> value);
+
+    Set<Object> getSet(String name);
+
+    void putSet(String name, Set<Object> value);
+
+    Map<Object, Object> getMap(String name);
+    void putMap(String name, Map<Object, Object> map);
 }
