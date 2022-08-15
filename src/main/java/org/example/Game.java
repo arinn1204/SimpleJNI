@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Game implements GameMBean {
     private String stringAttribute;
@@ -18,7 +19,6 @@ public class Game implements GameMBean {
     private final Map<String, Float> floatMap = new HashMap<>();
     private final Map<String, List<Object>> listMap = new HashMap<>();
     private final Map<String, Set<Object>> setMap = new HashMap<>();
-    private final Map<String, Map<Object, Object>> mapMap = new HashMap<>();
 
     @Override
     public String getStringAttribute() {
@@ -121,7 +121,41 @@ public class Game implements GameMBean {
 
     @Override
     public Map<Object, Object> getMap(String name) {
-        return mapMap.get(name);
+        return switch(name.toLowerCase()) {
+            case "list" -> listMap.entrySet().stream()
+                    .collect(
+                            Collectors.toMap(entry -> (Object) entry.getKey(), entry -> (Object) entry.getValue())
+                    );
+            case "set" -> setMap.entrySet().stream()
+                    .collect(
+                            Collectors.toMap(entry -> (Object) entry.getKey(), entry -> (Object) entry.getValue())
+                    );
+            case "string" -> stringMap.entrySet().stream()
+                    .collect(
+                            Collectors.toMap(entry -> (Object) entry.getKey(), entry -> (Object) entry.getValue())
+                    );
+            case "integer" -> intMap.entrySet().stream()
+                    .collect(
+                            Collectors.toMap(entry -> (Object) entry.getKey(), entry -> (Object) entry.getValue())
+                    );
+            case "long" -> longMap.entrySet().stream()
+                    .collect(
+                            Collectors.toMap(entry -> (Object) entry.getKey(), entry -> (Object) entry.getValue())
+                    );
+            case "double" -> doubleMap.entrySet().stream()
+                    .collect(
+                            Collectors.toMap(entry -> (Object) entry.getKey(), entry -> (Object) entry.getValue())
+                    );
+            case "float" -> floatMap.entrySet().stream()
+                    .collect(
+                            Collectors.toMap(entry -> (Object) entry.getKey(), entry -> (Object) entry.getValue())
+                    );
+            case "boolean" -> booleanMap.entrySet().stream()
+                    .collect(
+                            Collectors.toMap(entry -> (Object) entry.getKey(), entry -> (Object) entry.getValue())
+                    );
+            default -> null;
+        };
     }
 
     @Override
