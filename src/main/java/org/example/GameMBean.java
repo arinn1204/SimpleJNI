@@ -53,5 +53,4 @@ public interface GameMBean {
     void putSet(String name, Set<Object> value);
 
     Map<Object, Object> getMap(String name);
-    void putMap(String name, Map<Object, Object> map);
 }

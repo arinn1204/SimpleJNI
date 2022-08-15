@@ -125,11 +125,6 @@ public class Game implements GameMBean {
     }
 
     @Override
-    public void putMap(String name, Map<Object, Object> map) {
-        mapMap.put(name, map);
-    }
-
-    @Override
     public Double getDoubleAttribute() {
         return doubleAttribute;
     }
