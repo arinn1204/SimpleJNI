@@ -8,8 +8,8 @@ public class Game implements GameMBean {
     private Long longAttribute;
     private Double doubleAttribute;
     private Float floatAttribute;
-    private Boolean boolAttribute;
-    private Integer intAttribute;
+    private Boolean booleanAttribute;
+    private Integer integerAttribute;
 
     private final Map<String, String> stringMap = new HashMap<>();
     private final Map<String, Double> doubleMap = new HashMap<>();
@@ -181,24 +181,24 @@ public class Game implements GameMBean {
         return longAttribute;
     }
 
-    public Boolean getBoolAttribute() {
-        return boolAttribute;
+    public Boolean getBooleanAttribute() {
+        return booleanAttribute;
     }
 
     public void setLongAttribute(Long longAttribute) {
         this.longAttribute = longAttribute;
     }
 
-    public void setBoolAttribute(Boolean boolAttribute) {
-        this.boolAttribute = boolAttribute;
+    public void setBooleanAttribute(Boolean booleanAttribute) {
+        this.booleanAttribute = booleanAttribute;
     }
 
     @Override
-    public Integer getIntAttribute() {
-        return intAttribute;
+    public Integer getIntegerAttribute() {
+        return integerAttribute;
     }
 
-    public void setIntAttribute(Integer intAttribute) {
-        this.intAttribute = intAttribute;
+    public void setIntegerAttribute(Integer integerAttribute) {
+        this.integerAttribute = integerAttribute;
     }
 }

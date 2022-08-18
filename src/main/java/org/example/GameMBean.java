@@ -7,17 +7,17 @@ import java.util.Set;
 public interface GameMBean {
 
     String getStringAttribute();
-    Integer getIntAttribute();
+    Integer getIntegerAttribute();
     Long getLongAttribute();
     Float getFloatAttribute();
     Double getDoubleAttribute();
-    Boolean getBoolAttribute();
+    Boolean getBooleanAttribute();
 
-    void setIntAttribute(Integer attribute);
+    void setIntegerAttribute(Integer attribute);
     void setLongAttribute(Long attribute);
     void setFloatAttribute(Float attribute);
     void setDoubleAttribute(Double attribute);
-    void setBoolAttribute(Boolean attribute);
+    void setBooleanAttribute(Boolean attribute);
     void setStringAttribute(String attribute);
 
     String getString(String name);
