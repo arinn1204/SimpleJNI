@@ -12,14 +12,15 @@ public class Game implements GameMBean {
     private Integer integerAttribute;
     private List<String> listAttribute;
     private Set<Float> setAttribute;
+    private List<List<Integer>> nestedAttribute = List.of(List.of(1,2,3));
 
     private final Map<String, String> stringMap = new HashMap<>();
-    private final Map<String, Double> doubleMap = new HashMap<>();
     private final Map<String, Long> longMap = new HashMap<>();
     private final Map<String, Integer> intMap = new HashMap<>();
     private final Map<String, Boolean> booleanMap = new HashMap<>();
     private final Map<String, Float> floatMap = new HashMap<>();
     private final Map<String, Set<Object>> setMap = new HashMap<>();
+    private Map<String, Double> doubleMap = new HashMap<>();
     private Map<String, List<Object>> listMap = new HashMap<>();
 
     @Override
@@ -232,5 +233,13 @@ public class Game implements GameMBean {
     @Override
     public void setListAttribute(List<String> listAttribute) {
         this.listAttribute = listAttribute;
+    }
+
+    public List<List<Integer>> getNestedAttribute() {
+        return nestedAttribute;
+    }
+
+    public void setNestedAttribute(List<List<Integer>> nestedAttribute) {
+        this.nestedAttribute = nestedAttribute;
     }
 }
