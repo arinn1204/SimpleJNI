@@ -23,6 +23,10 @@ public class Game implements GameMBean {
         t.add(3);
 
         nestedAttribute.add(t);
+
+        mapAttribute = new HashMap<>();
+        mapAttribute.put("one", 1);
+        mapAttribute.put("two", 2);
     }
 
     private final Map<String, String> stringMap = new HashMap<>();
