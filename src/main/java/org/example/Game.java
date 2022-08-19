@@ -13,7 +13,17 @@ public class Game implements GameMBean {
     private List<String> listAttribute;
     private Set<Float> setAttribute;
     private Map<String, Integer> mapAttribute;
-    private List<List<Integer>> nestedAttribute = List.of(List.of(1,2,3));
+    private List<List<Integer>> nestedAttribute;
+
+    public Game() {
+        nestedAttribute = new ArrayList<>();
+        ArrayList<Integer> t = new ArrayList<>();
+        t.add(1);
+        t.add(2);
+        t.add(3);
+
+        nestedAttribute.add(t);
+    }
 
     private final Map<String, String> stringMap = new HashMap<>();
     private final Map<String, Long> longMap = new HashMap<>();
