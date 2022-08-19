@@ -19,6 +19,8 @@ public interface GameMBean {
     void setSetAttribute(Set<Float> s);
 
     List<List<Integer>> getNestedAttribute();
+    void setMapAttribute(Map<String, Integer> mapAttribute);
+    Map<String, Integer> getMapAttribute();
 
     Map<String, List<Object>> getListMap();
     void setListMap(Map<String, List<Object>> m);

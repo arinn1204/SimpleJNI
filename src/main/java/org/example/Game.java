@@ -12,6 +12,7 @@ public class Game implements GameMBean {
     private Integer integerAttribute;
     private List<String> listAttribute;
     private Set<Float> setAttribute;
+    private Map<String, Integer> mapAttribute;
     private List<List<Integer>> nestedAttribute = List.of(List.of(1,2,3));
 
     private final Map<String, String> stringMap = new HashMap<>();
@@ -241,5 +242,13 @@ public class Game implements GameMBean {
 
     public void setNestedAttribute(List<List<Integer>> nestedAttribute) {
         this.nestedAttribute = nestedAttribute;
+    }
+
+    public Map<String, Integer> getMapAttribute() {
+        return mapAttribute;
+    }
+
+    public void setMapAttribute(Map<String, Integer> mapAttribute) {
+        this.mapAttribute = mapAttribute;
     }
 }
