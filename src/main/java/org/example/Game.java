@@ -19,8 +19,8 @@ public class Game implements GameMBean {
     private final Map<String, Integer> intMap = new HashMap<>();
     private final Map<String, Boolean> booleanMap = new HashMap<>();
     private final Map<String, Float> floatMap = new HashMap<>();
-    private final Map<String, List<Object>> listMap = new HashMap<>();
     private final Map<String, Set<Object>> setMap = new HashMap<>();
+    private Map<String, List<Object>> listMap = new HashMap<>();
 
     @Override
     public String getStringAttribute() {
@@ -212,6 +212,16 @@ public class Game implements GameMBean {
     @Override
     public void setSetAttribute(Set<Float> setAttribute) {
         this.setAttribute = setAttribute;
+    }
+
+    @Override
+    public Map<String, List<Object>> getListMap() {
+        return listMap;
+    }
+
+    @Override
+    public void setListMap(Map<String, List<Object>> m) {
+        this.listMap = m;
     }
 
     @Override
