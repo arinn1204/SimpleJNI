@@ -10,6 +10,8 @@ public class Game implements GameMBean {
     private Float floatAttribute;
     private Boolean booleanAttribute;
     private Integer integerAttribute;
+    private List<String> listAttribute;
+    private Set<Float> setAttribute;
 
     private final Map<String, String> stringMap = new HashMap<>();
     private final Map<String, Double> doubleMap = new HashMap<>();
@@ -200,5 +202,25 @@ public class Game implements GameMBean {
 
     public void setIntegerAttribute(Integer integerAttribute) {
         this.integerAttribute = integerAttribute;
+    }
+
+    @Override
+    public Set<Float> getSetAttribute() {
+        return setAttribute;
+    }
+
+    @Override
+    public void setSetAttribute(Set<Float> setAttribute) {
+        this.setAttribute = setAttribute;
+    }
+
+    @Override
+    public List<String> getListAttribute() {
+        return listAttribute;
+    }
+
+    @Override
+    public void setListAttribute(List<String> listAttribute) {
+        this.listAttribute = listAttribute;
     }
 }

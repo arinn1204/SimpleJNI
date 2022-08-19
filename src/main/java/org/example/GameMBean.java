@@ -12,6 +12,11 @@ public interface GameMBean {
     Float getFloatAttribute();
     Double getDoubleAttribute();
     Boolean getBooleanAttribute();
+    List<String> getListAttribute();
+    void setListAttribute(List<String> a);
+
+    Set<Float> getSetAttribute();
+    void setSetAttribute(Set<Float> s);
 
     void setIntegerAttribute(Integer attribute);
     void setLongAttribute(Long attribute);
