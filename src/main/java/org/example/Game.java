@@ -28,7 +28,7 @@ public class Game implements GameMBean {
         mapAttribute.put("one", 1);
         mapAttribute.put("two", 2);
 
-        stringMap.put("hello", "world");
+        longMap.put("hello", 3141592L);
     }
 
     private final Map<String, String> stringMap = new HashMap<>();
